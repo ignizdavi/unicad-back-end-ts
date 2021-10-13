@@ -5,8 +5,8 @@ const options: swaggerJsdoc.Options = {
   basePath: '/',
   swaggerDefinition: {
     info: {
-      description: 'Fleury Genomica Products API',
-      title: 'Genomica Products API',
+      description: 'API desafio Unicad',
+      title: 'API',
       version: '1.0.0',
     },
     securityDefinitions: {
