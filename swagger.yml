@@ -1,0 +1,100 @@
+openapi: 3.0.0
+info:
+  description: 'API CLIENTS - DAVI BARBOSA'
+  version: '1.0.0'
+  title: 'API CLIENTS'
+  contact:
+    email: 'davibarbosa1992@gmail.com'
+  license:
+    name: 'Apache 2.0'
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /v1/clients:
+    get:
+      tags:
+        - 'Clients'
+      summary: return all clients
+      description: return all clients.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/contacts'
+    post:
+      tags:
+        - 'Clients'
+      summary: create a new client on clients api
+      description: create a new general client on clients api.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                _id:
+                  type: string
+                  example: 123
+                cpf:
+                  type: string
+                  example: 10110110183
+                fullName:
+                  type: string
+                  example: Davi Barbosa
+                addressStart:
+                  type: string
+                  example: 'Rua Projetada'
+                numAdressStart:
+                  type: number
+                  example: '15'
+                addressFinal:
+                  type: string
+                  example: 'Rua projetada final'
+                numAdressFinal:
+                  type: number
+                  example: '10'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Auth'
+  /v1/clients/{id}:
+    get:
+      tags:
+        - 'Clients'
+      summary: get client
+      description: return client
+      parameters:
+        - required: true
+          type: string
+          name: id
+          in: path
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/clients'
+  components:
+    schemas:
+      clients:
+        type: object
+        properties:
+          _id:
+            type: string
+          cpf:
+            type: string
+          fullName:
+            type: string
+          addressStart:
+            type: string
+          numAdressStart:
+            type: number
+          adressFinal:
+            type: string
+          numAdressFinal:
+            type: number

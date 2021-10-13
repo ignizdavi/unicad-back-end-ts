@@ -1,0 +1,8 @@
+node_modules
+.vscode
+dist
+.env*
+coverage
+sonar-project.properties
+sonar.js:Zone.Identifier
+test-report.xml
